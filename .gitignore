@@ -1,0 +1,10 @@
+settings.json
+.vscode
+**/node_modules
+/node_modules
+**/npm-debug.log
+/private
+output
+domain_validated.ca-bundle
+
+

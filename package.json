@@ -1,0 +1,76 @@
+{
+  "scripts": {
+    "dev": ". ./config/development/env.sh && meteor --settings ./config/development/settings.json -p $MPORT",
+    "pretest": "npm run lint --silent",
+    "tests": "meteor test --driver-package practicalmeteor:mocha",
+    "test-app-watch": "meteor test --full-app --driver-package practicalmeteor:mocha",
+    "lint": "eslint .",
+    "production": "meteor --settings settings-production.json"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.3.1",
+    "aws-sdk": "^2.130.0",
+    "babel-runtime": "^6.26.0",
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.18.2",
+    "bufferutil": "^3.0.2",
+    "faker": "^3.0.1",
+    "filepreview": "^1.0.14",
+    "hammerjs": "^2.0.8",
+    "http-proxy": "^1.16.2",
+    "imap": "^0.8.19",
+    "jquery": "^3.2.1",
+    "kurento-client": "^6.6.0",
+    "lodash": "4.12.0",
+    "meteor-node-stubs": "^0.2.11",
+    "moment": "2.13.0",
+    "slick-carousel": "^1.7.1",
+    "socket.io": "^1.4.8",
+    "socket.io-client": "^1.4.8",
+    "stripe": "^4.25.0",
+    "utf-8-validate": "^3.0.3",
+    "wtf-8": "^1.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.1",
+    "eslint": "^2.3.0",
+    "eslint-config-airbnb": "^6.1.0",
+    "eslint-plugin-meteor": "^3.0.1",
+    "eslint-plugin-react": "^4.0.0",
+    "gulp": "^3.9.1"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "meteor"
+    ],
+    "extends": [
+      "airbnb/base",
+      "plugin:meteor/recommended"
+    ],
+    "rules": {
+      "meteor/eventmap-params": [
+        2,
+        {
+          "eventParamName": "event",
+          "templateInstanceParamName": "instance"
+        }
+      ],
+      "meteor/template-names": [
+        0
+      ]
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions"
+        ]
+      }
+    }
+  }
+}

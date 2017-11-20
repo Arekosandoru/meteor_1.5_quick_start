@@ -1,0 +1,272 @@
+<template name="stripe_page">
+<div class="get-for-free-modal" id="get-for-free-modal">
+    <div class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">{{_ "text.prizeSystem"}}</div>
+        <div class="ui grid no-margin">
+            <div class="sixteen-wide-mobile twelve wide column">
+                <p>{{{_ "text.claimInfo"}}}</p>
+                <div class="ui form">
+                    <div class="ui dividing header">{{_ "text.invite"}}</div>
+                    <div class="fields">
+                        <div class="two wide field"></div>
+                        <div class="seven wide field">
+                            <input id="user_email" type="text" placeholder="{{_ 'text.email'}}">
+                        </div>
+                        <div class="five wide field">
+                            <button id="invite_member_btn" class="ui fluid button">{{_ "text.invite"}}</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui form">
+                    <div class="ui dividing header">{{_ "text.claimItemBtn"}}</div>
+                    <div class="fields">
+                        <div class="two wide field"></div>
+                        <div class="twelve wide field">
+                            <select id="selected_item">
+                                {{#each get_items}}
+                                    <option value="{{name}}">{{name}}</option>
+                                {{/each}}
+
+                                <!-- <option value="sdasd">Text</option>
+                                <option value="sdasd">Text</option>
+                                <option value="sdasd">Text</option>
+                                <option value="sdasd">Text</option> -->
+                            </select>
+                        </div>
+                        <div class="two wide field"></div>
+                    </div>
+                    <div class="fields">
+                        <div class="two wide field"></div>
+                        <div class="twelve wide field">
+                            <button id="claim_item" class="ui fluid button" disabled="{{#unless user_have_enough_points}}disabled{{/unless}}">{{_ "text.claimItemBtn"}}</button>
+                        </div>
+                        <div class="two wide field"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="sixteen-wide-mobile four wide column">
+                <div class="ui pointing below red basic massive label">
+                    {{get_users_points}}
+                </div>
+                <div class="ui header center aligned">{{_ "text.yourPointsCount"}}</div>
+                <div class="ui list">
+                    <div class="item"><div class="ui purple horizontal label">10</div>{{_ "text.userPremOneMonth"}}</div>
+                    <div class="item"><div class="ui purple horizontal label">20</div>{{_ "text.gymPremOneMonth"}}</div>
+                    <!-- <div class="item"><div class="ui purple horizontal label">45p</div>Fitness bracelet</div> -->
+                    <div class="item"><div class="ui purple horizontal label">50</div>{{_ "text.gosportzTshirt"}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="body stripe">
+        {{> sAlert}}
+
+        <div class="page-content">
+            <div class="ui container">
+                <div class="ui grid no-t-margin">
+                    <div class="two-wide-tablet four wide computer only tablet only column"></div>
+                    <div class="sixteen-wide-mobile twelve-wide-tablet eight wide column">
+                        <!-- <div class="ui dividing header">{{_ "text.subscription"}}:  {{get_subscription_status}}</div> -->
+                            <!-- <div class="referrals-wrapper center aligned">
+                                {{#if inviteMember}}
+                                    <div class="column">
+                                        <div class="ui fluid card">
+                                            <div class="content">
+                                                    <div class="uk-form-row">
+                                                    <div class="inline-element invite-user-email-field">
+                                                        <label>{{_ "text.email"}}: </label>
+                                                        <div class="ui search" id="ui_search">
+                                                            <div class="ui icon input">
+                                                                <input class="prompt" id="user_email" type="text" placeholder="{{_ 'text.emailPlaceholder'}}" autocomplete="off">
+                                                                <i class="search icon"></i>
+                                                            </div>
+                                                            <div class="results"></div>
+                                                        </div>
+                                                    </div>
+                            
+                                                    <button class="mini ui primary button" id="invite_member_btn">{{_ "text.invite"}}</button>
+                                                    <button class="mini ui secondary button" id="close_member_btn">{{_ "text.close"}}</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{else}}
+                                    <p>
+                                        <a id="invite_member" class="edit-text" href="#">{{_ "text.inviteMember"}} <i class="plus icon"></i></a>
+                                    </p>
+                                {{/if}}
+                            
+                                <div class="select-item-with-points-wrapper">
+                                    <div class="user-points">
+                                        <p>
+                                            {{#if get_active_invited_users_count}}
+                                                {{_ "text.yourPointsCount"}} get_active_invited_users_count
+                                            {{else}}
+                                                {{_ "text.userHaveNoPoints"}}
+                                            {{/if}}
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="field select-item">
+                                        <label for="selected_item">{{_ "text.claimItemWithPoints"}}</label>
+                                        <select id="selected_item" class="ui dropdown">
+                                            <option value="" selected="selected" disabled="disabled">{{_ "text.claimItemWithPoints"}}</option>
+                            
+                                            <option value="T-shirt">T-shirt</option>
+                                            <option value="1-month-subscription">1-month-subscription</option>
+                                            <option value="3-months-subscription">3-months-subscription</option>
+                                        </select>
+                                    </div>
+                            
+                                    <button id="claim_item" class="ui green button" disabled="{{#unless user_have_enough_points}}disabled{{/unless}}">{{_ "text.claimItemBtn"}}</button>
+                                </div>
+                            </div> -->
+
+                        <div class="ui dividing header">
+                            {{_ "text.subscription"}}:  {{get_subscription_status}}
+                            <div class="ui mini button" id="get-for-free-modal-open">{{_ 'text.getFree'}}</div>
+                        </div>
+
+                        {{#unless currentUser.profile.customerId}}
+                            <div class="ui form no-t-margin">
+                                <div class="field">
+                                    <label for="select_subscription_plan">{{_ "text.plan"}}</label>
+                                    <select id="select_subscription_plan" class="ui dropdown">
+                                         <option value="">--Plan--</option> <!--{{_ "text.plan"}} -->
+                                        {{#each plans}}
+                                        <option value="{{id}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label for="credit_card_number">{{_ "text.cardNumber"}}</label>
+                                        <input id="credit_card_number" type="number" step="1" />
+                                    </div>
+                                    <div class="field">
+                                        <label for="credit_card_csv">{{_ "text.cvc"}}</label>
+                                        <input id="credit_card_csv" type="number" step="1" />
+                                    </div>
+                                </div>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label for="credit_card_year">{{_ "text.expiryYear"}}</label>
+                                        <select id="credit_card_year" class="ui dropdown">
+                                        {{#each get_years}}
+                                            <option value="{{value}}">{{year}}</option>
+                                        {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="field">
+                                        <label for="credit_card_month">{{_ "text.expiryMonth"}}</label>
+                                        <select id="credit_card_month" class="ui dropdown">
+                                        {{#each get_months}}
+                                            <option value="{{value}}">{{month}}</option>
+                                        {{/each}}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="coupon_code">{{_ "text.voucher"}}</label>
+                                    <input id="coupon_code" type="text" />
+                                </div>
+                                <button id="subscribe_customer_btn" class="ui olive button subscription-btn">{{_ "text.subscribeText"}}</button>
+                            </div>
+                        {{else}}
+                            <div class="ui form">
+                                <div class="field">
+                                    <label for="update_subscription_plan">{{_ "text.plan"}}</label>
+                                    <select id="update_subscription_plan" class="ui dropdown">
+                                        <option value="">--Plan--</option> <!--{{_ "text.plan"}} -->
+                                    {{#each plans}}
+                                        <option value="{{id}}">{{name}}</option>
+                                    {{/each}}
+                                    </select>
+                                </div>
+                                {{#if currentUser.profile.isSubscribed}}
+                                    <button id="active_update_plan_btn" class="ui olive button subscription-btn">{{_ "text.updatePlan"}}</button>
+                                {{else}}
+                                    <button id="active_update_plan_btn" class="ui olive button subscription-btn">{{_ "text.activePlan"}}</button>
+                                {{/if}}
+                            </div>
+                            <div class="ui form">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label for="update_credit_card_number">{{_ "text.cardNumber"}}</label>
+                                        <input id="update_credit_card_number" type="number" />
+                                    </div>
+                                    <div class="field">
+                                        <label for="update_credit_card_csv">{{_ "text.cvc"}}</label>
+                                        <input id="update_credit_card_csv" type="number" />
+                                    </div>
+                                </div>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label for="update_credit_card_year">{{_ "text.expiryYear"}}</label>
+                                        <select id="update_credit_card_year" class="ui dropdown">
+                                        {{#each get_years}}
+                                            <option value="{{value}}">{{year}}</option>
+                                        {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="field">
+                                        <label for="update_credit_card_month">{{_ "text.expiryMonth"}}</label>
+                                        <select id="update_credit_card_month" class="ui dropdown">
+                                        {{#each get_months}}
+                                            <option value="{{value}}">{{month}}</option>
+                                        {{/each}}
+                                        </select>
+                                    </div>
+                                </div>
+                                <button id="update_card_btn" class="ui olive button subscription-btn">{{_ "text.updateCard"}}</button>
+                            </div>
+                            {{#if currentUser.profile.isSubscribed}}
+                                <div class="ui form">
+                                    <div class="field">
+                                        <label for="use_coupon_code">{{_ "text.voucher"}}</label>
+                                        <input id="use_coupon_code" type="text" />
+                                    </div>
+                                    <button id="use_coupon_btn" class="ui olive button subscription-btn">{{_ "text.useVoucher"}}</button>
+                                </div>
+                            {{/if}}
+                            <div class="row invoices-wrapper">
+                                <h5>{{_ "text.last5payments"}}:</h5>
+
+                                {{#if get_customer_invoices}}
+                                    <table class="ui celled table invoices-table">
+                                        <tr>
+                                            <th>{{_ "text.date"}}</th>
+                                            <th>{{_ "text.amount"}}</th>
+                                        </tr>
+
+                                        {{#each get_customer_invoices}}
+                                            <tr>
+                                                <td>{{payDate}}</td>
+                                                <td>${{total}}</td>
+                                            </tr>
+                                        {{/each}}
+                                    </table>
+                                {{else}}
+                                    <p>{{_ "text.youDontHaveAnyInvoicesYet"}}.</p>
+                                {{/if}}
+                            </div>
+                            <br />
+                            {{#if currentUser.profile.isSubscribed}}
+                                <div class="row" style="float: left;">
+                                    <button id="cancel_subscription_btn" class="ui red button subscription-btn">{{_ "text.cancelSubscription"}}</button>
+                                </div>
+                                <br />
+                            {{/if}}
+                            <div class="row" style="float: right;">
+                                <button id="delete_card_data_btn" class="ui red button subscription-btn">{{_ "text.deleteAllCardData"}}</button>
+                            </div>
+                        {{/unless}}
+                    </div>
+                    <div class="four wide computer only column"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

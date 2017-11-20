@@ -1,0 +1,353 @@
+/* **
+*
+* Fix semantic grid to work with meteor
+*
+*** */
+
+/* Mobile Sizing Combinations */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .ui.grid > .row > .one-wide-mobile.column,
+  .ui.grid > .column.row > .one-wide-mobile.column,
+  .ui.grid > .one-wide-mobile.column,
+  .ui.column.grid > .one-wide-mobile.column {
+    width: 6.25% !important;
+  }
+
+  .ui.grid > .row > .two-wide-mobile.column,
+  .ui.grid > .column.row > .two-wide-mobile.column,
+  .ui.grid > .two-wide-mobile.column,
+  .ui.column.grid > .two-wide-mobile.column {
+    width: 12.5% !important;
+  }
+
+  .ui.grid > .row > .three-wide-mobile.column,
+  .ui.grid > .column.row > .three-wide-mobile.column,
+  .ui.grid > .three-wide-mobile.column,
+  .ui.column.grid > .three-wide-mobile.column {
+    width: 18.75% !important;
+  }
+
+  .ui.grid > .row > .four-wide-mobile.column,
+  .ui.grid > .column.row > .four-wide-mobile.column,
+  .ui.grid > .four-wide-mobile.column,
+  .ui.column.grid > .four-wide-mobile.column {
+    width: 25% !important;
+  }
+
+  .ui.grid > .row > .five-wide-mobile.column,
+  .ui.grid > .column.row > .five-wide-mobile.column,
+  .ui.grid > .five-wide-mobile.column,
+  .ui.column.grid > .five-wide-mobile.column {
+    width: 31.25% !important;
+  }
+
+  .ui.grid > .row > .six-wide-mobile.column,
+  .ui.grid > .column.row > .six-wide-mobile.column,
+  .ui.grid > .six-wide-mobile.column,
+  .ui.column.grid > .six-wide-mobile.column {
+    width: 37.5% !important;
+  }
+
+  .ui.grid > .row > .seven-wide-mobile.column,
+  .ui.grid > .column.row > .seven-wide-mobile.column,
+  .ui.grid > .seven-wide-mobile.column,
+  .ui.column.grid > .seven-wide-mobile.column {
+    width: 43.75% !important;
+  }
+
+  .ui.grid > .row > .eight-wide-mobile.column,
+  .ui.grid > .column.row > .eight-wide-mobile.column,
+  .ui.grid > .eight-wide-mobile.column,
+  .ui.column.grid > .eight-wide-mobile.column {
+    width: 50% !important;
+  }
+
+  .ui.grid > .row > .nine-wide-mobile.column,
+  .ui.grid > .column.row > .nine-wide-mobile.column,
+  .ui.grid > .nine-wide-mobile.column,
+  .ui.column.grid > .nine-wide-mobile.column {
+    width: 56.25% !important;
+  }
+
+  .ui.grid > .row > .ten-wide-mobile.column,
+  .ui.grid > .column.row > .ten-wide-mobile.column,
+  .ui.grid > .ten-wide-mobile.column,
+  .ui.column.grid > .ten-wide-mobile.column {
+    width: 62.5% !important;
+  }
+
+  .ui.grid > .row > .eleven-wide-mobile.column,
+  .ui.grid > .column.row > .eleven-wide-mobile.column,
+  .ui.grid > .eleven-wide-mobile.column,
+  .ui.column.grid > .eleven-wide-mobile.column {
+    width: 68.75% !important;
+  }
+
+  .ui.grid > .row > .twelve-wide-mobile.column,
+  .ui.grid > .column.row > .twelve-wide-mobile.column,
+  .ui.grid > .twelve-wide-mobile.column,
+  .ui.column.grid > .twelve-wide-mobile.column {
+    width: 75% !important;
+  }
+
+  .ui.grid > .row > .thirteen-wide-mobile.column,
+  .ui.grid > .column.row > .thirteen-wide-mobile.column,
+  .ui.grid > .thirteen-wide-mobile.column,
+  .ui.column.grid > .thirteen-wide-mobile.column {
+    width: 81.25% !important;
+  }
+
+  .ui.grid > .row > .fourteen-wide-mobile.column,
+  .ui.grid > .column.row > .fourteen-wide-mobile.column,
+  .ui.grid > .fourteen-wide-mobile.column,
+  .ui.column.grid > .fourteen-wide-mobile.column {
+    width: 87.5% !important;
+  }
+
+  .ui.grid > .row > .fifteen-wide-mobile.column,
+  .ui.grid > .column.row > .fifteen-wide-mobile.column,
+  .ui.grid > .fifteen-wide-mobile.column,
+  .ui.column.grid > .fifteen-wide-mobile.column {
+    width: 93.75% !important;
+  }
+
+  .ui.grid > .row > .sixteen-wide-mobile.column,
+  .ui.grid > .column.row > .sixteen-wide-mobile.column,
+  .ui.grid > .sixteen-wide-mobile.column,
+  .ui.column.grid > .sixteen-wide-mobile.column {
+    width: 100% !important;
+  }
+}
+
+/* Tablet Sizing Combinations */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ui.grid > .row > .one-wide-tablet.column,
+  .ui.grid > .column.row > .one-wide-tablet.column,
+  .ui.grid > .one-wide-tablet.column,
+  .ui.column.grid > .one-wide-tablet.column {
+    width: 6.25% !important;
+  }
+
+  .ui.grid > .row > .two-wide-tablet.column,
+  .ui.grid > .column.row > .two-wide-tablet.column,
+  .ui.grid > .two-wide-tablet.column,
+  .ui.column.grid > .two-wide-tablet.column {
+    width: 12.5% !important;
+  }
+
+  .ui.grid > .row > .three-wide-tablet.column,
+  .ui.grid > .column.row > .three-wide-tablet.column,
+  .ui.grid > .three-wide-tablet.column,
+  .ui.column.grid > .three-wide-tablet.column {
+    width: 18.75% !important;
+  }
+
+  .ui.grid > .row > .four-wide-tablet.column,
+  .ui.grid > .column.row > .four-wide-tablet.column,
+  .ui.grid > .four-wide-tablet.column,
+  .ui.column.grid > .four-wide-tablet.column {
+    width: 25% !important;
+  }
+
+  .ui.grid > .row > .five-wide-tablet.column,
+  .ui.grid > .column.row > .five-wide-tablet.column,
+  .ui.grid > .five-wide-tablet.column,
+  .ui.column.grid > .five-wide-tablet.column {
+    width: 31.25% !important;
+  }
+
+  .ui.grid > .row > .six-wide-tablet.column,
+  .ui.grid > .column.row > .six-wide-tablet.column,
+  .ui.grid > .six-wide-tablet.column,
+  .ui.column.grid > .six-wide-tablet.column {
+    width: 37.5% !important;
+  }
+
+  .ui.grid > .row > .seven-wide-tablet.column,
+  .ui.grid > .column.row > .seven-wide-tablet.column,
+  .ui.grid > .seven-wide-tablet.column,
+  .ui.column.grid > .seven-wide-tablet.column {
+    width: 43.75% !important;
+  }
+
+  .ui.grid > .row > .eight-wide-tablet.column,
+  .ui.grid > .column.row > .eight-wide-tablet.column,
+  .ui.grid > .eight-wide-tablet.column,
+  .ui.column.grid > .eight-wide-tablet.column {
+    width: 50% !important;
+  }
+
+  .ui.grid > .row > .nine-wide-tablet.column,
+  .ui.grid > .column.row > .nine-wide-tablet.column,
+  .ui.grid > .nine-wide-tablet.column,
+  .ui.column.grid > .nine-wide-tablet.column {
+    width: 56.25% !important;
+  }
+
+  .ui.grid > .row > .ten-wide-tablet.column,
+  .ui.grid > .column.row > .ten-wide-tablet.column,
+  .ui.grid > .ten-wide-tablet.column,
+  .ui.column.grid > .ten-wide-tablet.column {
+    width: 62.5% !important;
+  }
+
+  .ui.grid > .row > .eleven-wide-tablet.column,
+  .ui.grid > .column.row > .eleven-wide-tablet.column,
+  .ui.grid > .eleven-wide-tablet.column,
+  .ui.column.grid > .eleven-wide-tablet.column {
+    width: 68.75% !important;
+  }
+
+  .ui.grid > .row > .twelve-wide-tablet.column,
+  .ui.grid > .column.row > .twelve-wide-tablet.column,
+  .ui.grid > .twelve-wide-tablet.column,
+  .ui.column.grid > .twelve-wide-tablet.column {
+    width: 75% !important;
+  }
+
+  .ui.grid > .row > .thirteen-wide-tablet.column,
+  .ui.grid > .column.row > .thirteen-wide-tablet.column,
+  .ui.grid > .thirteen-wide-tablet.column,
+  .ui.column.grid > .thirteen-wide-tablet.column {
+    width: 81.25% !important;
+  }
+
+  .ui.grid > .row > .fourteen-wide-tablet.column,
+  .ui.grid > .column.row > .fourteen-wide-tablet.column,
+  .ui.grid > .fourteen-wide-tablet.column,
+  .ui.column.grid > .fourteen-wide-tablet.column {
+    width: 87.5% !important;
+  }
+
+  .ui.grid > .row > .fifteen-wide-tablet.column,
+  .ui.grid > .column.row > .fifteen-wide-tablet.column,
+  .ui.grid > .fifteen-wide-tablet.column,
+  .ui.column.grid > .fifteen-wide-tablet.column {
+    width: 93.75% !important;
+  }
+
+  .ui.grid > .row > .sixteen-wide-tablet.column,
+  .ui.grid > .column.row > .sixteen-wide-tablet.column,
+  .ui.grid > .sixteen-wide-tablet.column,
+  .ui.column.grid > .sixteen-wide-tablet.column {
+    width: 100% !important;
+  }
+}
+
+/* Computer/Desktop Sizing Combinations */
+
+@media only screen and (min-width: 992px) {
+  .ui.grid > .row > .one-wide-computer.column,
+  .ui.grid > .column.row > .one-wide-computer.column,
+  .ui.grid > .one-wide-computer.column,
+  .ui.column.grid > .one-wide-computer.column {
+    width: 6.25% !important;
+  }
+
+  .ui.grid > .row > .two-wide-computer.column,
+  .ui.grid > .column.row > .two-wide-computer.column,
+  .ui.grid > .two-wide-computer.column,
+  .ui.column.grid > .two-wide-computer.column {
+    width: 12.5% !important;
+  }
+
+  .ui.grid > .row > .three-wide-computer.column,
+  .ui.grid > .column.row > .three-wide-computer.column,
+  .ui.grid > .three-wide-computer.column,
+  .ui.column.grid > .three-wide-computer.column {
+    width: 18.75% !important;
+  }
+
+  .ui.grid > .row > .four-wide-computer.column,
+  .ui.grid > .column.row > .four-wide-computer.column,
+  .ui.grid > .four-wide-computer.column,
+  .ui.column.grid > .four-wide-computer.column {
+    width: 25% !important;
+  }
+
+  .ui.grid > .row > .five-wide-computer.column,
+  .ui.grid > .column.row > .five-wide-computer.column,
+  .ui.grid > .five-wide-computer.column,
+  .ui.column.grid > .five-wide-computer.column {
+    width: 31.25% !important;
+  }
+
+  .ui.grid > .row > .six-wide-computer.column,
+  .ui.grid > .column.row > .six-wide-computer.column,
+  .ui.grid > .six-wide-computer.column,
+  .ui.column.grid > .six-wide-computer.column {
+    width: 37.5% !important;
+  }
+
+  .ui.grid > .row > .seven-wide-computer.column,
+  .ui.grid > .column.row > .seven-wide-computer.column,
+  .ui.grid > .seven-wide-computer.column,
+  .ui.column.grid > .seven-wide-computer.column {
+    width: 43.75% !important;
+  }
+
+  .ui.grid > .row > .eight-wide-computer.column,
+  .ui.grid > .column.row > .eight-wide-computer.column,
+  .ui.grid > .eight-wide-computer.column,
+  .ui.column.grid > .eight-wide-computer.column {
+    width: 50% !important;
+  }
+
+  .ui.grid > .row > .nine-wide-computer.column,
+  .ui.grid > .column.row > .nine-wide-computer.column,
+  .ui.grid > .nine-wide-computer.column,
+  .ui.column.grid > .nine-wide-computer.column {
+    width: 56.25% !important;
+  }
+
+  .ui.grid > .row > .ten-wide-computer.column,
+  .ui.grid > .column.row > .ten-wide-computer.column,
+  .ui.grid > .ten-wide-computer.column,
+  .ui.column.grid > .ten-wide-computer.column {
+    width: 62.5% !important;
+  }
+
+  .ui.grid > .row > .eleven-wide-computer.column,
+  .ui.grid > .column.row > .eleven-wide-computer.column,
+  .ui.grid > .eleven-wide-computer.column,
+  .ui.column.grid > .eleven-wide-computer.column {
+    width: 68.75% !important;
+  }
+
+  .ui.grid > .row > .twelve-wide-computer.column,
+  .ui.grid > .column.row > .twelve-wide-computer.column,
+  .ui.grid > .twelve-wide-computer.column,
+  .ui.column.grid > .twelve-wide-computer.column {
+    width: 75% !important;
+  }
+
+  .ui.grid > .row > .thirteen-wide-computer.column,
+  .ui.grid > .column.row > .thirteen-wide-computer.column,
+  .ui.grid > .thirteen-wide-computer.column,
+  .ui.column.grid > .thirteen-wide-computer.column {
+    width: 81.25% !important;
+  }
+
+  .ui.grid > .row > .fourteen-wide-computer.column,
+  .ui.grid > .column.row > .fourteen-wide-computer.column,
+  .ui.grid > .fourteen-wide-computer.column,
+  .ui.column.grid > .fourteen-wide-computer.column {
+    width: 87.5% !important;
+  }
+
+  .ui.grid > .row > .fifteen-wide-computer.column,
+  .ui.grid > .column.row > .fifteen-wide-computer.column,
+  .ui.grid > .fifteen-wide-computer.column,
+  .ui.column.grid > .fifteen-wide-computer.column {
+    width: 93.75% !important;
+  }
+
+  .ui.grid > .row > .sixteen-wide-computer.column,
+  .ui.grid > .column.row > .sixteen-wide-computer.column,
+  .ui.grid > .sixteen-wide-computer.column,
+  .ui.column.grid > .sixteen-wide-computer.column {
+    width: 100% !important;
+  }
+}
