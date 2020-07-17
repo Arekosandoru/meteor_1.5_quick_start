@@ -21,7 +21,7 @@
     "imap": "^0.8.19",
     "jquery": "^3.2.1",
     "kurento-client": "^6.6.0",
-    "lodash": "4.12.0",
+    "lodash": "4.17.19",
     "meteor-node-stubs": "^0.2.11",
     "moment": "2.13.0",
     "slick-carousel": "^1.7.1",
